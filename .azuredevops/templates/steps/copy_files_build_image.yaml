@@ -1,0 +1,26 @@
+parameters:
+- name: container_registry
+- name: image_repository_name
+
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Registry: $env:container_registry"
+      Write-Host "Registry Repo: $env:image_repository_name"
+    pwsh: true
+  env:
+    container_registry: ${{ parameters.container_registry }}
+    image_repository_name: ${{ parameters.image_repository_name }}
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Registry: $env:container_registry"
+      Write-Host "Registry Repo: $env:image_repository_name"
+    pwsh: true
+  env:
+    container_registry: ${{ parameters.container_registry }}
+    image_repository_name: ${{ parameters.image_repository_name }}

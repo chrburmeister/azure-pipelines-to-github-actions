@@ -1,0 +1,14 @@
+
+
+stages:
+- stage: build
+    vmImage: 'ubuntu-20.04'
+  jobs:
+  - job: build
+    steps:
+      - checkout: self
+
+      - template: .azuredevops/templates/steps/copy_files_build_image.yaml
+        parameters:
+          container_registry: 'compregistrydevcr'
+          image_repository_name: 'frontend'
