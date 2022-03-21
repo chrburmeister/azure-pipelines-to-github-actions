@@ -7,7 +7,7 @@ stages:
   pool:
     vmImage: ubuntu-latest
   jobs:
-  - template: ../templates/jobs/build_app.yml
+  - template: ../templates/jobs/build_app.yaml
     parameters:
       container_registry: 'compregistrydevcr'
       image_repository_name: 'frontend'
