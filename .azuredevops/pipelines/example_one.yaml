@@ -1,3 +1,5 @@
+# call template with steps in a job
+
 trigger: none
 
 stages:
