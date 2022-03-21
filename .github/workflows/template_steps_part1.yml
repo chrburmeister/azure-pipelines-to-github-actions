@@ -10,7 +10,7 @@ on:
         required: true
         type: string
     secrets:
-      password_value:
+      password:
         required: true
 
 jobs:
@@ -23,7 +23,7 @@ jobs:
         env:
           container_registry: ${{ inputs.container_registry }}
           image_repository_name: ${{ inputs.image_repository_name }}
-          password: ${{ secrets.password_value }}
+          password: ${{ secrets.password }}
         run: |
           Write-Output $env:container_registry
           Write-Output $env:image_repository_name
