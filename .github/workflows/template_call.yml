@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    uses: chrburmeister/azure-pipelines-to-github-actions/.github/workflows/template_steps_part1.yml@test
+    uses: chrburmeister/azure-pipelines-to-github-actions/.github/workflows/template_steps_part1.yml@main
     with:
       container_registry: 'compregistrydevcr'
       image_repository_name: 'frontend'
