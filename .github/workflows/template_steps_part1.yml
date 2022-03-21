@@ -9,7 +9,9 @@ on:
       image_repository_name:
         required: true
         type: string
-      
+    secrets:
+      password:
+        required: true
 
 jobs:
   build:
@@ -21,6 +23,8 @@ jobs:
         env:
           container_registry: ${{ inputs.container_registry }}
           image_repository_name: ${{ inputs.image_repository_name }}
+          password: ${{ secrets.password }}
         run: |
           Write-Output $env:container_registry
           Write-Output $env:image_repository_name
+          Write-Output $env:password
