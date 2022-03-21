@@ -1,0 +1,11 @@
+parameters:
+- name: container_registry
+- name: image_repository_name
+
+stages:
+- stage: Build
+  jobs:
+  - template: ../templates/jobs/build_app.yaml
+    parameters:
+      container_registry: 'compregistrydevcr'
+      image_repository_name: 'frontend'

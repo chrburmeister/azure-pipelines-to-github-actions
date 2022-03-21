@@ -1,0 +1,10 @@
+# call template with an entire stage
+
+trigger: none
+
+stages:
+- template: ../templates/stages/build_app.yaml
+  parameters:
+    container_registry: 'compregistrydevcr'
+    image_repository_name: 'frontend'
+  
