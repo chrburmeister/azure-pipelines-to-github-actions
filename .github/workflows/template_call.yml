@@ -9,7 +9,7 @@ jobs:
     with:
       container_registry: 'compregistrydevcr'
       image_repository_name: 'frontend'
-      password: ${{ secrets.PASSWORD }}
+      password_value: ${{ secrets.PASSWORD }}
   deploy:
     runs-on: ubuntu-20.04
     needs: build
