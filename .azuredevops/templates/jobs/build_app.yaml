@@ -8,7 +8,7 @@ jobs:
   pool:
     vmImage: windows-latest
   steps:
-  - template: ../steps/build_app.yml
+  - template: ../steps/copy_files_build_image.yaml
     parameters:
       container_registry: ${{ parameters.container_registry }}
       image_repository_name: ${{ parameters.image_repository_name }}
@@ -18,7 +18,7 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   steps:
-  - template: ../steps/build_app.yml
+  - template: ../steps/copy_files_build_image.yaml
     parameters:
       container_registry: ${{ parameters.container_registry }}
       image_repository_name: ${{ parameters.image_repository_name }}
@@ -28,7 +28,7 @@ jobs:
   pool:
     vmImage: macOS-latest
   steps:
-  - template: ../steps/build_app.yml
+  - template: ../steps/copy_files_build_image.yaml
     parameters:
       container_registry: ${{ parameters.container_registry }}
       image_repository_name: ${{ parameters.image_repository_name }}
