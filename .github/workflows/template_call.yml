@@ -1,0 +1,11 @@
+name: Template Call
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: chrburmeister/azure-pipelines-to-github-actions/.github/workflows/template_steps_part1.yml@test
+    with:
+      container_registry: 'compregistrydevcr'
+      image_repository_name: 'frontend'
