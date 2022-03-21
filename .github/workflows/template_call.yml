@@ -9,3 +9,10 @@ jobs:
     with:
       container_registry: 'compregistrydevcr'
       image_repository_name: 'frontend'
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: build
+    steps:
+      - shell: pwsh
+        run: |
+          Write-Output "deploy to Azure!"
