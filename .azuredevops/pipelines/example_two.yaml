@@ -1,0 +1,13 @@
+# call template with jobs in a stage
+
+trigger: none
+
+stages:
+- stage: build
+  pool:
+    vmImage: ubuntu-latest
+  jobs:
+  - template: ../templates/jobs/build_app.yaml
+    parameters:
+      container_registry: 'compregistrydevcr'
+      image_repository_name: 'frontend'

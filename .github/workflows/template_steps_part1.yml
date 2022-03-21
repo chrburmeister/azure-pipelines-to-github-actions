@@ -1,0 +1,26 @@
+name: do steps
+
+on:
+  workflow_call:
+    inputs:
+      container_registry:
+        required: true
+        type: string
+      image_repository_name:
+        required: true
+        type: string
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - shell: pwsh
+        env:
+          container_registry: ${{ inputs.container_registry }}
+          image_repository_name: ${{ inputs.image_repository_name }}
+        run: |
+          Write-Output $env:container_registry
+          Write-Output $env:image_repository_name
